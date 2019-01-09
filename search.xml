@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Dynamic Time Warping]]></title>
+    <url>%2F2018%2F03%2F19%2F2018-3-19-DTW%2F</url>
+    <content type="text"><![CDATA[Dynamic Time Warping Dynamic Time Warping 的目标是比较两个依赖于时间的序列 $X:=(x_1, x_2, \cdots, x_N), Y:=(y_1, y_2,\cdots, y_M)$，这些序列可以是离散信号（时间序列），或者更一般地，是在等距时间点采样的特征序列。记 $\mathcal{F}$为特征空间，则 $x_n, y_m\in\mathcal{F},n\in[1:N],m\in[1:M]$。为了比较两个不同的特征 $x,y\in\mathcal{F}$，需要引入一个局部花费度量（local cost measure），有时也称为局部距离度量（local distance measure），其定义为 $$c:\mathcal{F}\times\mathcal{F}\to\mathbb{R}_{\ge0}$$ 通常情况下，如果 $x$ 与 $y$ 相似，$c(x,y)$ 会比较小，否则会很大。通过计算序列 $X$ 和 $Y$ 的每个元素形成的数对的局部花费度量，可以得到花费矩阵 $C\in\mathbb{R}^{N\times M}$，定义为 $C(n,m):=c(x_n,y_m)$。那么我们的目标是寻找 $X$ 与 $Y$ 之间拥有最小整体花费的alignment。 定义 一个 $(N,M)-warping path$ 是一个序列 $p=(p_1,p_2,\cdots,p_L)$，其中 $p_l=(n_l,m_l)\in[1:N]\times[1:M],l\in[1:L]$ 满足下面三个条件： 边界条件：$p_1=(1,1),\ p_L={N,M}$ 单调条件：$n_1\le n_2\le\cdots\le n_L,\ m_1\le m_2\le\cdots\le m_L$ 步长条件：$p_{i+1}-p_i\in{(1,0),(0,1),(1,1)},\ l\in[1:L-1]$ 设局部花费度量为 $c$，$X$ 和 $Y$ 之间的warping path $p$ 的总花费 $c_p(X,Y)$ 可定义为$$c_p(X,Y):=\sum_{l=1}^{L}c(x_{nl},y_{ml})$$此外，$X$ 和 $Y$ 之间的最优 warping path 是所有可能的warping paths中具有最小总花费的warping path $p^$。$X$ 和 $Y$ 之间的DTW距离 $DTW(X,Y)$ 定义为$$DTW(X,Y):=c_{p^}(X,Y)=\min{c_p(X,Y)|p is an (N,M)-warping path}$$ remark: 在局部话费度量 $c$ 是对称的情况下，DTW距离是对称的。但DTW距离一般是非正定的，即使 $c$ 正定。 DTW距离一般不满足三角不等式性。 例 令 $\mathcal{F}={\alpha,\beta,\gamma}$ 是由三个特征组成的特征空间，定义花费度量 $c:\mathcal{F}\times\mathcal{F}\to{0,1}$ 为$$c{x,y}=\begin{cases}0 &amp; if x=y \1 &amp; if x \neq y\end{cases},x,y\in\mathcal{F}$$注意 $c$ 是定义在 $\mathcal{F}$ 上的度量函数，满足三角不等式性。现在考虑 $X=(\alpha,\beta,\gamma),Y=(\alpha,\beta,\beta,\gamma),Z=(\alpha,\gamma,\gamma)$。容易算得：$DTW(X,Y)=0, DTW(X,Z)=1,DTW(Y,Z)=2$。因此 $DTW(Y,Z)\ge DTW(X,Y)+DTW(X,Z)$，不满足三角不等式性。注意到 $p^1=((1,1),(2,2),(3,2),(4,3)),p^2=((1,1),(2,1),(3,2),(4,3)),p^3=((1,1),(2,2),(3,3),(4,3))$ 是 $Y$ 和 $Z$ 之间的不同的最优 warping paths，这说明optimal warping path 一般不唯一。 为了寻找最优路径 $p^*$，一种可以尝试的方法是检测 $X$ 和 $Y$ 之间的每一条可能的 warping path，这种方法的计算复杂度会随着 $N$ 和 $M$ 的增长呈指数增长，下面介绍一种复杂度为 $O(NM)$ 的动态规划算法。 未完。。。]]></content>
+      <categories>
+        <category>统计</category>
+      </categories>
+      <tags>
+        <tag>时间序列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[The sincere advice from J.D.Watson's speech in SUSTech]]></title>
+    <url>%2F2018%2F03%2F18%2F2018-3-18-Watson%2F</url>
+    <content type="text"><![CDATA[These following advice were taken from J.D.Watson’s speech in SUSTech that I copied from Qzone. (Actually I don’t know who organized these sentences.) Some of opinions seem to be known to everyone, but are easily overlooked. Most of these advice are about study and research, but I think some are also suitable for work. Emmm as for why I am writing in English, just as learning programming: You cannot learn python well if you only reading code without writing. However, no more than five people know the blog, hahaha…… Avoid fighting bigger boys or dogs 避免与大男孩和狗打架 Put lots of spin on balls 练好旋转球 Never accept dares that put your life at risk 从不接受置生命于危险的胆敢 Accept only advice that comes from experience as opposed to revelation 只接受来自经验而非启示的建议 Hypocrisy in search of social acceptance erodes your self-respect 虚伪的寻求社会认可将侵蚀你的自尊 Never be flippant with teachers 从不对老师无礼 When intellectually panicking, get help 当陷入智力恐慌（才思穷尽）时，去寻求帮助 College is for learning how to think 上大学是为了学习如何思考 Knowing ‘why’(an idea)is more important than learning ‘what’(a fact) 知道“为什么”（想法）比学习“是什么”（事实）更重要 New ideas usually need new facts 新的想法通常需要新的事实 Think like your teachers 像你的老师一样思考 Pursue courses where you get top grades 在你取得高分的课程中继续学习 Seek out bright as opposed to popular friends 追寻明智的人，而不是受欢迎的朋友 Have teachers who like you intellectually 有智商上能与你匹敌的老师 Narrow down your intellectual(career)objectives while still in college 在你还在大学的时候就应该缩小你的知识（职业）方面的目标 Choose a young thesis adviser 选择一位年轻的论文导师 Expect young hotshots to have arrogant reputations 期待年轻就能快速地拥有傲人的名望 Extend yourself intellectually through courses that initially frighten you 通过最初唬住你的课程去拓宽你的知识面 Humility pays off during oral exams 谦虚在口试中有回报 Avoid advanced courses that waste your time 避免浪费你时间的高级课程 Don’t choose your initial thesis objective 不要选择你最初的论文目标 Keep your intellectual curiosity much broader than your thesis objective 保持你知识层面的好奇心比你的论文目标更广泛 Have a big objective that makes you feel special 有一个让你感到特别的大目标 Sit in the front row when a seminar’s title intrigues you 当有激起你兴趣的研讨会时一定要坐第一排 Irreproducible results can be blessings in disguise 不可重现的结果可能是伪装的祝福 Always have an audience for your experiments 总要让你的实验有观众 Avoid boring people 避免无聊的人 Science is highly social 科学是高级社会 Leave a research field before it bores you 在你厌倦之前留下一个研究领域 Choose an objective apparently ahead of its time 选择一个明显地超越这个时代的目标 Work on problems only when you feel tangible success may come in several years 只有当你觉得实际的成功可能在几年后到来时，才去研究问题 Work with a teammate who is your intellectual equal 跟与你智商匹敌的伙伴工作 Stay in close contact with your intellectual competitors 跟你知识上的竞争者们保持密切的联系 Never be the brightest person in the room 永远不要做房间里最聪明的人 Always have someone to save you 总要有一个人他可以来拯救你]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[树莓派初次使用——无键盘无显示屏配件操作]]></title>
+    <url>%2F2017%2F10%2F03%2F2017-10-3-raspberryPi-system%2F</url>
+    <content type="text"><![CDATA[树莓派是个好吃，哦不，好玩的东西hhhhh 基本需求 硬件淘宝买的树莓派（包含原配电源、散热板、外壳），大于8G的TF卡，读卡器。嗯，这些就够了。 软件SD Card Formatter，win32diskimager，树莓派官方系统、xshell（或者其他替代软件）。 写入系统 读卡器用SD Card Formatter格式化 解压树莓派官方系统，得到一个img文件 用win32diskimager把img文件写入TF卡里这样把TF卡插入树莓派，开机，系统就会自动安装。 没有显示屏、键盘的使用方法由于没有键盘和显示屏，树莓派连接无线网就很麻烦。再把系统写入TF卡里之后，先别急着把卡插到树莓派。先在根目录建两个文件： 文件名为ssh的文件，无后缀名，内容有没有都无所谓 文件名为wpa_supplicant.conf的文件，写入内容如下1234567country=CNctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdevupdate_config=1network=&#123; ssid="你的Wifi名称，注意大小写" psk="你的Wifi密码"&#125; 然后把卡插入树莓派，开机。接下来，登陆路由器管理页面，查看树莓派的ip地址，然后用xshell连树莓派，默认用户名是pi，默认密码是raspberry。这样就搞定了。 图形化界面显示嘿嘿嘿，新手如果对命令行陌生，可以用这个办法。用xshell进入树莓派命令行后，安装tightvncserver和xrdp12sudo apt-get install tightvncserversudo apt-get install xrdp 然后重启xrdp服务1sudo service xrdp restart 再打开windows自带的远程桌面连接(mstsc.exe)，输入ip地址就可以显示树莓派的可视化界面了。 用HDMI接口连接显示屏的一些设置打开配置文件config.txt文件，做如下修改]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>RaspberryPi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spark安装教程]]></title>
+    <url>%2F2017%2F09%2F06%2F2017-9-6-spark-setup%2F</url>
+    <content type="text"><![CDATA[在Windows下安装spark 下载相应版本的 python( 2.7+/3.4+)、java、spark 和 hadoop ，安装 python 和 java 把 %JAVA_HOME%\bin、%HADOOP_HOME%\bin 和 %SPARK_HOME%\bin 添加到环境变量path中 下载 winutils.exe 放到 %HADOOP_HOME%\bin 中 安装 pycharm，在 Edit Configurations-&gt;Environment variables 里添加 %SPARK_HOME%\bin 和 %SPARK_HOME%\python 注1：%JAVA_HOME% 指 java的安装位置，%HADOOP_HOME% 和 %SPARK_HOME% 分别指 hadoop 和 spark 的解压位置。注2：路径不要出现空格！路径不要出现空格！路径不要出现空格！]]></content>
+      <categories>
+        <category>spark</category>
+      </categories>
+      <tags>
+        <tag>spark</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[音频分割]]></title>
+    <url>%2F2017%2F03%2F23%2F2017-3-23-split-sound%2F</url>
+    <content type="text"><![CDATA[最近在练习听写，想找一个可以把音频播放完一句话之后暂停的软件。没有找到合适的，于是自己用matlab写了一个。 1234567891011121314151617181920212223function splitsound(filename)[data, fs] = audioread(filename);A = data(:,1);D(1) = 1;j = 2; k = 0;for ii = 1:length(A) if abs(A(ii)) &lt; 1e-3 % 考虑存在噪声，设置阈值1e-3 k = k+1; if A(ii) ~= 0 &amp;&amp; k &gt; 30000 % 假设朗读者句子之间停顿时间是30000/fs秒 D(j) = ii; k = 0; j = j+1; end endendtt = 1;while tt &lt; length(D) sound(A(D(tt):D(tt+1)),fs) flag = input('put a to listen again and put other key to listen next sentence:','s'); if ~strcmp(flag,'a') tt = tt+1; endend]]></content>
+      <categories>
+        <category>matlab</category>
+      </categories>
+      <tags>
+        <tag>matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[同义词替换]]></title>
+    <url>%2F2016%2F11%2F02%2F2016-11-2-synonyms%2F</url>
+    <content type="text"><![CDATA[常见同义词替换 第一组 1 解决: solve, deal with, cope with, handle, resolve, address, tackle 2 损害：damage, hurt, injure, harm, impair, undermine, jeopardize 3 给与：give, offer, render, impart, provide, supply, afford 4 培养： develop, cultivate, foster 5 优势：advantage, merit, virtue, benefit, upside, strength 6 缺陷：disadvantage, demerit, drawback, downside, weakness 7 使迷惑：puzzle, bewilder, perplex, baffle 8 重要的：key, crucial, critical, important, significant, vital, substantial, indispensable, imperative 9 认为 ： think, believe, insist, maintain, assert, conclude, deem, hold, argue, be convinced, be firmly convinced, be fully convinced 10 保护：protect, conserve, preserve 11 确保：assure, ensure, guarantee, pledge 12 有害的： bad, baneful evil, harmful, detrimental 13 要求 ：request, demand, needs, requisition 14 消除 ：eliminate, clear, remove, clear up, take away, smooth away 15 导致： lead to, bring about, result in, cause, spark off, conduce to, procure, induce, generate 16 因 此 ： so, therefore, thus, hence, consequently, as a consequence, accordingly, as a result, because of this, as a result of this 17 增长至：grow to，rise to，increase to，go up to，climb to，ascend to，jump to，shoot to 18 降低至：dip to，fall to，decline to，decrease to，drop to，go down to，reduce to， slump to， descend to，sink to，slide to 19 保持稳定：level out，do not change，remain stable，remain still，remain steady，be stable， maintain the same level，remain unchanged，be still，remain the same level，stay constant，keep at the same level，level off，stabilize，keep its stability，even out 20 急剧地：dramatically，drastically，sharply，hugely，enormously，steeply，substantially， considerably，significantly，markedly，surprisingly，strikingly，radically，remarkably，vastly， noticeably 21 平稳地：steadily，smoothly，slightly，slowly，marginally，gradually，moderately，mildly 22 宣称：allege, assert, declare, claim 23 发生：happen, occur, take place 24 原因：reason, factor, cause 25 发展：development, advance, progress 26 有益的：useful, helpful, beneficial, profitable, rewarding， advantageous 27 影响：influence, impact, effect 28 明显的：clear, obvious, evident, self-evident, manifest, apparent, crystal-clear 29 占 ： comprise, take up, account for, constitute, consist of, make up, occupy, hold, compose 30 与…相比：compared with，compared to，in comparison with，in comparison to，by comparison with，by comparison to 31 对比而言：by contrast，in contrast，on the other hand，on the contrary=，conversely 32 展示：show, reveal, illustrate, demonstrate, depict, present, represent, describe 33 大约：approximately，almost，about，around，nearly，roughly 34 波动：fluctuate，go ups and downs，display a fluctuation，demonstrate a fluctuation 35 事实上：practically，in practice，essentially，in essence，in reality，in effect，in fact，as a matter of fact，it is a fact that 36 换言之：namely，that is to say，in other words，to put it like this，to put it differently，to put it from another way，to put it from another angle 第二组 1 individuals, characters, folks 替换(people ,persons) 2 positive, favorable, rosy ( 美 好 的 ) ， promising( 有 希 望 的 ) ， perfect, pleasurable , excellent, outstanding, superior 替换 good 3 dreadful, unfavorable, poor, adverse, ill (有害的)替换 bad 如果 bad 做表语，可以有 be less impressive 替 换 eg. an army of college students indulge themselves in playing games, enjoying romance with girls/boys or killing time passively in their dorms. when it approaches to graduation ,as a result, they find their academic records are less impressive. 4 (an army of, an ocean of, a sea of, a multitude of ,a host of, many, if not most)替换 many.注：用 many, if not most 一定要小心，many 后一定要有词。eg. many individuals, if not most, harbor the idea that….同理 用 most, if not all, 替换 most. 5 a slice of, quiet a few , several 替换 some 6 harbor the idea that, take the attitude that, hold the view that, it is widely shared that ,it is universally acknowledged that) 替 think( 因 为 是 书 面 语 ， 所 以 要 加 that) 7 affair ,business ,matter 替换 thing 8 shared 代 common 9 reap huge fruits 替换 get many benefits ) 10 for my part ,from my own perspective 替换 in my opinion 11 increasing(ly),growing 替换 more and more( 注意没有 growingly 这种形式。所以当修饰名 词 时 用 increasing/growing. 修 饰 形 容 词 ， 副 词 用 increasingly. eg. sth has gained growing popularity .sth is increasingly popular with the advancement of sth. 12 little if anything, 或 little or nothing 替换 hardly 13 beneficial, rewarding 替换 helpful 14 shopper,client,consumer,purchaser, 替换 customer 15 exceedingly,extremely, intensely 替换 very 16 hardly necessary, hardly inevitable … 替换 unnecessary, avoidable 17 th appeals to sb, sth exerts a tremendous fascination on sb 替 换 sb take interest in / sb. be interested in 18 capture one’s attention 替换 attract one’s attention. 19 facet,demension,sphere 代 aspect 20 be indicative of ,be suggestive of ,be fearful of 代 indicate, suggest ,fear 21 give rise to, lead to, result in, trigger 替换 cause. 22 there are several reasons behind sth 替换..reasons for sth 23 desire 替换 want. 24 pour attention into 替换 pay attention to 25 bear in mind that 替换 remember 26 enjoy, possess 替换 have(注意 process 是过程的意思) 27 interaction 替换 communication 28 own on sth 替换 be against , disagree with sth 29 to name only a few, as an example 替换 for example, for instance 30 next to / virtually impossible,替换 nearly / almost impossible 形容词 1 贫穷的：poor = needy = impoverished = poverty-stricken 2 富裕的：rich = wealthy = affluent = well-to-do = well-off 3 优秀的：excellent = eminent = top = outstanding 4 积极的，好的：good = conducive = beneficial=advantageous 5 消极的，不良的：bad = detrimental= baneful =undesirable 6 明显的：obvious = apparent = evident =manifest 7 健康的: healthy = robust = sound = wholesome 8 惊人的：surprising = amazing = extraordinary = miraculous 9 美丽的：beautiful = attractive = gorgeous = eye-catching 10 有活力的：energetic = dynamic = vigorous =animated 11 流行的： popular = prevailing = prent= pervasive 动词 1 提高，加强：improve = enhance= promote = strengthen = optimize 2 引起：cause = trigger = endanger 3 解决：solve =resolve =address = tackle =cope with = deal with 4 拆除：destroy = tear down = knock down = eradicate 5 培养: develop = cultivate = foster = nurture 6 激发，鼓励：encourage = motivate = stimulate = spur 7 认为： think = assert= hold = claim = argue 8 完成：complete = fulfill = accomplish= achieve 9 保留：keep = preserve = retain = hold 10 有害于：destroy = impair = undermine = jeopardize 11 减轻: ease = alleviate = relieve = lighten 名词 1 影响：influence= impact 2 危险：dangerous = perils =hazardous 3 污染：pollution = contamination 4 人类：human beings= mankind = humane race 5 老人：old people= the old = the elderly = the aged = senior citizens 6 幸福：happiness = cheerfulness = well-being 7 老师：teachers = instructors = educators = lecturers=tutors 8 教育：education = schooling = family parenting = upbringing 9 青少年：young people = youngsters = youths = adolescents 10 优点：advantage = merits = superiority = virtue 11 责任： responsibility = obligation = duty = liability 12 能力： ability = capacity = power = skill 13 职业： job = career = employment = profession 14 娱乐： enjoyment = pastimes = recreation= entertainment 15 孩子： children = offspring = descendant= kid 短语 1 充满了：be filled with = be awash with = be inundate with = be saturated with 2 努力：struggle for = aspire after = strive for = spare no efforts for 3 从事： embark on = take up = set about = go in for 4 在当代: in contemporary society = in present-day society= in this day and age 5 大量的: a host of = a multitude of = a vast number of = a vast amount of]]></content>
+      <categories>
+        <category>英语</category>
+      </categories>
+      <tags>
+        <tag>english</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[金融中的一些概念]]></title>
+    <url>%2F2016%2F09%2F25%2Fconcepts-in-financial%2F</url>
+    <content type="text"><![CDATA[汇总一些金融领域的概念 期权期权又称为选择权，是一种衍生性金融工具。是指买方向卖方支付期权费（指权利金）后拥有的在未来一段时间内（指美式期权）或未来某一特定日期（指欧式期权）以事先规定好的价格（指履约价格）向卖方购买或出售一定数量的特定标的物的权利，但不负有必须买进或卖出的义务（即期权买方拥有选择是否行使买入或卖出的权利，而期权卖方都必须无条件服从买方的选择并履行成交时的允诺）。 来自知乎的一个例子[1]：公司2011年1月份给了2000股期权，行权日期为2012年1月，行权价格为5元。 什么意思呢？ 就是说，到了2012年1月分，我可以以5元/股的价格购买公司股票。如果到了那个时候，公司的股价是10元，那么我选择行使权力：5元/股的价格买入，那就等于我花了20005=10000美元的价格买到了市值 102000=20000美元的股票。 但是，如果2012年1月的时候公司的股价为2元。那么，如果那是我再行使权力，那我就是傻子了。这个时候，我只能暂时放弃行权，等到公司涨到5元以上再行权。 利率单利：若有这样的一种累积计算方式：1个货币单位的投资经过任何一个单位的计息期产生的利息为常数，则称对应的利息计算方式为简单利息计算方式，简称单利方式；对应的利息称为单利。 复利：若有这样的一种累积计算方式：1个货币单位的投资经过任何一个单位的计息期产生的利率为常数，则称对应的利息计算方式为复合利息计算方式，简称复利方式；对应的利息称为复利。 复利利息收入自动计入下一期的本金 贴现因子、终值、现值：定义贴现因子为 $$v=(1+i)^{-1}$$ 其中 $i$ 为实利率。称 $(1+i)^t$ 为1个货币单位的本金在第 $t$ 个计息期末的终值（简称AV）；称 $v^t$ 为第 $t$ 个计息期末1个货币单位在0时刻的现值（简称PV） cash flow $x = (x_0,\cdots, x_n); x_i$ is payment in period $i$ (to us if $x_i &gt; 0$) we assume $x_0 &lt; 0$ and $x_0 + x_1 +\cdots+ x_n &gt; 0$ present value of cash flow $x$, for interest rate $r$:$$\text{PV}(x,r)=\sum_{i=0}^n(1+r)^{-i}x_i$$ internal rate of return is smallest interest rate for which $\text{PV}(x, r) = 0$:$$\text{IRR}(x) = \inf{r \geq 0 | \text{PV}(x, r) = 0}$$ Reference[1] 姜沈励. http://www.zhihu.com/question/19959819/answer/13509953]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>金融</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C程序练习]]></title>
+    <url>%2F2016%2F09%2F11%2Fexercise-C%2F</url>
+    <content type="text"><![CDATA[一些练习题。 一、约德尔测试题目描述兰博和提莫闲聊之后，回归到了他们的正题，约德尔人的未来。 说起约德尔人的未来，黑默丁格曾经提出了一个约德尔测试，将约德尔人的历史的每个阶段都用一个字符表达出来。(包括可写字符,不包括空格。)。然后将这个字符串转化为一个01串。转化规则是如果这个字符如果是字母或者数字，这个字符变为1,其它变为0。然后将这个01串和黑默丁格观测星空得到的01串做比较，得到一个相似率。相似率越高,则约德尔的未来越光明。 请问:相似率为多少？ 输入 每组输入数据为两行，第一行为有关约德尔人历史的字符串，第二行是黑默丁格观测星空得到的字符串。 (两个字符串的长度相等,字符串长度不小于1且不超过1000。) 样例输入 @!%12dgsa 010111100 输出 输出一行，在这一行输出相似率。用百分数表示。(相似率为相同字符的个数/总个数,精确到百分号小数点后两位。printf(“%%”);输出一个%。) 代码12345678910111213141516171819#include &lt;stdio.h&gt;#include &lt;string.h&gt;int main()&#123; char s[1000], ss[1000]; float i = 0,ii; scanf("%s", s); scanf("%s", ss); ii = strlen(s); for (int j = 0; j &lt; ii; j++) &#123; if (s[j] &gt;= 'a'&amp;&amp;s[j] &lt;= 'z' || s[j] &gt;= 'A'&amp;&amp;s[j] &lt;= 'Z' || s[j] &gt;= '0'&amp;&amp;s[j] &lt;= '9') s[j] = '1'; else s[j] = '0'; if (s[j]==ss[j]) i++; &#125; printf("%.2f%%", i / ii*100);&#125; 二、上楼梯题目描述有一楼梯共m级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第m级，共有多少走法？ 注：规定从一级到一级有0种走法。 输入 输入数据首先包含一个整数n(1&lt;=n&lt;=100)，表示测试实例的个数，然后是n行数据，每行包含一个整数m，（1&lt;=m&lt;=40), 表示楼梯的级数。 输出 对于每个测试实例，请输出不同走法的数量。 代码123456789101112131415161718192021222324#include&lt;stdio.h&gt;int s(int i)&#123; int ss; if (i == 1) ss = 0; else if (i == 2) ss = 1; else if (i == 3) ss = 2; else ss = s(i - 1) + s(i - 2); return ss;&#125;int main()&#123; int m, n; scanf("%d", &amp;n); for (int i = 1; i &lt;= n; i++) &#123; scanf("%d", &amp;m); printf("%d\n", s(m)); &#125;&#125; 三、数数练习题目描述爸爸教2岁的宝宝练习数数，将n 个玩具排成一行。所有玩具从左到右编号为 1 到 n。宝宝从左到右开始数数，当编号为 n 的玩具数完 n 之后，接着从右往左数，即编号为n-1 的玩具数 n+1，然后编号为 n-2 的玩具数 n+2，以此类推。当编号为1的玩具数完之后，方向又变成从左到右，依次类推。 为了鼓励宝宝坚持数数，每当宝宝数到7 或者包含7、还有7 的倍数时，爸爸会竖起大拇指以示鼓励。下表是 n=4 的数数情况（X 表示爸爸竖起大拇指）。当编号为 3 的玩具遇到爸爸第3次竖起大拇指的时候，宝宝实际上数到了 27。 玩具 1 2 3 4 3 2 1 2 3 4 3 2 1 2 3 4 3 2 1 2 3 4 3 2 1 2 3 数数 1 2 3 4 5 6 X 8 9 10 11 12 13 X 15 16 X 18 19 20 X 22 23 24 25 26 X 给定 n，m 和 k，你的任务是计算当编号为 m 的玩具遇到爸爸第 k 次竖起大拇指时，宝宝实际上数到了几。 输入 输入包含不超过 10 组数据。每组数据占一行，包含三个整数 n，m 和 k（2&lt;=n&lt;=100, 1&lt;=m&lt;=n, 1&lt;=k&lt;=100）。输入结束标志为 n=m=k=0。 输出 对于每组数据，输出一行，即编号为 m 的玩具遇到爸爸第 k 次竖起大拇指时，宝宝实际上数到了的那个整数。 代码12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;int main()&#123; int n, m, k, l, j, p = 1; while (p) &#123; j = 0; scanf("%d%d%d", &amp;n, &amp;m, &amp;k); if (n == 0) break; for (int i = 1;; i++) &#123; if (i % 2 == 0) l = (n - 1)*(i - 1) + n - m + 1; else l = (n - 1)*(i - 1) + m; printf("%d ", l); if (l % 7 == 0 || l%10==7) &#123; j++; if (j == k) &#123; printf("%d ", j); break; &#125; &#125; &#125; printf("%d\n", l); &#125; return 0;&#125; 四、距离的总和题目描述时间限制：C/C++语言 2000MS；其他语言 4000MS内存限制：C/C++语言 65536KB；其他语言 589824KB 定义两个大于2的偶数之间的距离，为这两个数之间质数的个数。从小到大输入n个大于2的偶数，输出所有数两两之间距离的总和（应该有n*(n-1)/2个距离，输出总和就好)。 输入第一行是输入偶数的个数，最小为2，最大可能到几万。之后每行为一个偶数，最小是4，最大可能是几百万，不重复的升序排列。 输出输入数据两两间距离的总和，这应该是一个不小于0的整数。 样例输入34612 样例输出6 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include &lt;stdio.h&gt;#include &lt;math.h&gt;#include &lt;stdlib.h&gt;struct num&#123; int nu; struct num * next;&#125;;int prime(int m)&#123; float k; int i; k = sqrt(m); for (i = 2; i &lt;= k; i++) if (m%i == 0) break; if (i &gt; k) return 1; else return 0;&#125;int dist(int m, int n)&#123; int count=0,j; for (j = m; j &lt;= n; j++) &#123; if (prime(j)) count++; &#125; return count;&#125;int main()&#123; int a, i, cou = 0; struct num *head, *p1, *p2; head = p2 = (struct num*)malloc(sizeof(struct num)); p2 = head; scanf("%d", &amp;a); for (i = 1; i &lt;= a; i++) &#123; p1 = (struct num*)malloc(sizeof(struct num)); scanf("%d", &amp;p1-&gt;nu); p2-&gt;next = p1; p2 = p1; &#125; p2-&gt;next = NULL; p2 = head-&gt;next; while (p2) &#123; p1 = p2-&gt;next; while (p1) &#123; cou += dist(p2-&gt;nu, p1-&gt;nu); p1 = p1-&gt;next; &#125; p2 = p2-&gt;next; &#125; printf("%d", cou); free(p1); free(p2); free(head);&#125; 此题为搜狗笔试题，提交后测试正确率是71%，不知问题在哪，求改进。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>C程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LASSO简介]]></title>
+    <url>%2F2016%2F08%2F12%2Flasso%2F</url>
+    <content type="text"><![CDATA[使用数理统计模型从海量数据中有效挖掘信息越来越受到业界关注。在建立模型之初，为了尽量减小因缺少重要自变量而出现的模型偏差，通常会选择尽可能多的自变量。然而，建模过程需要寻找对因变量最具有强解释力的自变量集合，也就是通过自变量选择（指标选择、字段选择）来提高模型的解释性和预测精度。指标选择在统计建模过程中是极其重要的问题。Lasso 算法则是一种能够实现指标集合精简的估计方法。 给出一组输入值 $x_1,x_2,\cdots x_p$ 和输出值 $y$，lasso 满足下面的线性模型： $$\hat y = b_0 + b_1 \times x_1 +b_2 \times x_2 + \cdots b_p \times x_p$$ 其标准是 $$ \min \vert \vert y- \hat y \vert \vert ^2 $$ $$ s.t. \sum_j \vert b_j \vert \leq s,s \geq 0 $$ $s$ 是调参。当 $s$ 足够大时，约束条件没有影响，其解只是通常的 $y$ 在 $x_1,x_2,\cdots x_p$ 上的线性最小二乘回归。当 $s$ 比较小时，求解方法是缩小版的最小二乘估计（shrunken versions of the least squares estimates）。通常情况下，系数 $b_j = 0$，对 $s$ 的选择就如同选择回归模型的中使用的预测值，交叉验证是估计 $s$ 的一个比较好的方法。 未完待续]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>统计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[K 近邻算法]]></title>
+    <url>%2F2016%2F08%2F11%2Fk-nearest-neighbor%2F</url>
+    <content type="text"><![CDATA[分类问题是机器学习中的一类问题。比如生物可以按照一定的特征分类，电影可以按题材分类等。K 近邻算法是解决分类问题的一种方法。 例子：对电影按题材分类 有人曾统计过很多电影的打斗镜头和接吻镜头，如下图。假如有一部未看过的电影，如何确定它是爱情片还是动作片？ 电影名称 打斗镜头 接吻镜头 电影类型 California Man 3 104 爱情片 He’s Not Really into Dudes 2 100 爱情片 Beautiful Woman 1 81 爱情片 Kevin Longblade 101 10 动作片 Robo Slayer 3000 99 5 动作片 Amped II 98 2 动作片 ? 18 90 未知 我们可以计算出未知电影与样本中的电影的距离，以此来推断该电影属于哪一类。至于距离怎么算，下面再说。 |已知电影与未知电影的距离|| 电影名称 | 与未知电影的距离||:—————-:|:———–:|| California Man | 20.5 || He’s Not Really into Dudes | 18.7 ||Beautiful Woman |19.2|| Kevin Longblade| 115.3 ||Robo Slayer 3000|117.4||Amped II|118.9| 现在我们得到了样本中的电影与未知电影的距离，按照递增排序，可以找到 $k$ 个距离最近的电影。假定 $k=3$，则单个最靠近的电影依次是 He’s Not Really into Dudes、 Beautiful Woman 和 California Man。这样我们可以推断出未知电影与这三部电影属于同一题材，属于爱情片。 K 近邻算法概述 K 近邻算法采用不同测量不同特征值之间的距离方法进行分类。 优点：精度高、对异常值不敏感、无数据输入假定。 缺点：计算复杂度高、空间复杂度高。 适用数据范围：数值型和标准型。 距离度量： k 近邻模型的特征空间一般是 $n$ 维实向量空间 $R^n$，可采用欧式距离进行度量，或者更一般的 $L_p$ 距离： $$L_p(x,y)= \left( \sum_{i=1}^n \vert x_i - x_j \vert ^p\right)^ \frac{1}{p},p \geq 1$$]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>分类问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[机器学习简介]]></title>
+    <url>%2F2016%2F08%2F07%2Fmachine-learning-introduction%2F</url>
+    <content type="text"><![CDATA[机器学习似乎很火，我也开始研究机器学习了~ 那什么是机器学习呢？ 搜集到的定义有： “机器学习是一门人工智能的科学，该领域的主要研究对象是人工智能，特别是如何在经验学习中改善具体算法的性能”。 “机器学习是对能通过经验自动改进的计算机算法的研究”。 “机器学习是用数据或以往的经验，以此优化计算机程序的性能标准。” “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.” 看着头大的定义先不管了。。。 用一个例子或许可以更好地阐述机器学习，比较经典的是垃圾邮件的检测。侦测一个单词是否存在并没有太大的作用，然而当某几个特定单词同时出现时，再辅以考察邮件长度及其他因素，人们就可以更准确地判定该邮件是否为垃圾邮件。在这种意义下，机器学习就是把无序的数据转换成有用的信息。 机器学习的任务： 机器学习的任务主要有三类：分类、回归、聚类和密度估计，涉及到的算法以后再说。 模型需要用到的概念： 假设空间 $ F $：输入空间到输出空间的映射的集合。 损失函数：用于度量预测错误的程度。设输入为 $X$，输出为 $Y$，$f \in F$，损失函数记为 $L(Y,f(x))$，常用的损失函数有： 0-1 损失函数：$$ \begin{eqnarray}L(Y,f(X))=\begin{cases}1,Y \neq f(X) \cr 0,Y = f(X)\end{cases}\end{eqnarray} $$ 平方损失函数：$$ L(Y,f(X))=(Y-f(X))^2 $$ 绝对损失函数：$$ L(Y,f(X))= \vert Y-f(X) \vert $$ 对数损失函数或对数似然损失函数：$$ L(Y,f(X))= -\log P(Y \vert X) $$ 损失函数越小，模型就越好。 经验风险：模型 $f(X)$ 关于训练数据集 $ T={(x _1,y _1),(x _2,y _2),\cdots,(x _N,y _N)} $ 的平均损失称为经验风险，记作 $ R _{emp}(f) $ ： $$ R _{emp}(f)=\frac{1}{N} \sum _{i=1}^N L(y _i,f(x _i)),(x _i,y _i)\in T $$]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+</search>
