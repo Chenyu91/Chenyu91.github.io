@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans,en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="english,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="常见同义词替换">
+<meta name="keywords" content="english">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同义词替换">
+<meta property="og:url" content="http://mathcy.cn/2016/11/02/2016-11-2-synonyms/index.html">
+<meta property="og:site_name" content="Rainstart">
+<meta property="og:description" content="常见同义词替换">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-09T15:36:50.082Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="同义词替换">
+<meta name="twitter:description" content="常见同义词替换">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mathcy.cn/2016/11/02/2016-11-2-synonyms/">
+
+
+
+
+
+  <title>同义词替换 | Rainstart</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rainstart</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mathcy.cn/2016/11/02/2016-11-2-synonyms/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rainstart">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">同义词替换</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-02T00:00:00+08:00">
+                2016-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/英语/" itemprop="url" rel="index">
+                    <span itemprop="name">英语</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>常见同义词替换</p>
+<a id="more"></a>
+<h3 id="第一组"><a href="#第一组" class="headerlink" title="第一组"></a>第一组</h3><hr>
+<p>1 解决: solve, deal with, cope with, handle, resolve, address, tackle </p>
+<p>2 损害：damage, hurt, injure, harm, impair, undermine, jeopardize </p>
+<p>3 给与：give, offer, render, impart, provide, supply, afford</p>
+<p>4 培养： develop, cultivate, foster</p>
+<p>5 优势：advantage, merit, virtue, benefit, upside, strength</p>
+<p>6 缺陷：disadvantage, demerit, drawback, downside, weakness </p>
+<p>7 使迷惑：puzzle, bewilder, perplex, baffle</p>
+<p>8 重要的：key, crucial, critical, important, significant, vital, substantial, indispensable, imperative</p>
+<p>9 认为 ： think, believe, insist, maintain, assert, conclude, deem, hold, argue, be convinced, be firmly convinced, be fully convinced</p>
+<p>10 保护：protect, conserve, preserve</p>
+<p>11 确保：assure, ensure, guarantee, pledge</p>
+<p>12 有害的： bad, baneful evil, harmful, detrimental </p>
+<p>13 要求 ：request, demand, needs, requisition</p>
+<p>14 消除 ：eliminate, clear, remove, clear up, take away, smooth away</p>
+<p>15 导致： lead to, bring about, result in, cause, spark off, conduce to, procure, induce, generate</p>
+<p>16 因 此 ： so, therefore, thus, hence, consequently, as a consequence, accordingly, as a result, because of this, as a result of this</p>
+<p>17 增长至：grow to，rise to，increase to，go up to，climb to，ascend to，jump to，shoot to  </p>
+<p>18 降低至：dip to，fall to，decline to，decrease to，drop to，go down to，reduce to， slump to， descend to，sink to，slide to</p>
+<p>19 保持稳定：level out，do not change，remain stable，remain still，remain steady，be stable， maintain the same level，remain unchanged，be still，remain the same level，stay constant，keep at the same level，level off，stabilize，keep its stability，even out</p>
+<p>20 急剧地：dramatically，drastically，sharply，hugely，enormously，steeply，substantially， considerably，significantly，markedly，surprisingly，strikingly，radically，remarkably，vastly， noticeably</p>
+<p>21 平稳地：steadily，smoothly，slightly，slowly，marginally，gradually，moderately，mildly </p>
+<p>22 宣称：allege, assert, declare, claim</p>
+<p>23 发生：happen, occur, take place </p>
+<p>24 原因：reason, factor, cause</p>
+<p>25 发展：development, advance, progress</p>
+<p>26 有益的：useful, helpful, beneficial, profitable, rewarding， advantageous </p>
+<p>27 影响：influence, impact, effect</p>
+<p>28 明显的：clear, obvious, evident, self-evident, manifest, apparent, crystal-clear</p>
+<p>29 占 ： comprise, take up, account for, constitute, consist of, make up, occupy, hold, compose </p>
+<p>30 与…相比：compared with，compared to，in comparison with，in comparison to，by comparison with，by comparison to</p>
+<p>31 对比而言：by contrast，in contrast，on the other hand，on the contrary=，conversely </p>
+<p>32 展示：show, reveal, illustrate, demonstrate, depict, present, represent, describe</p>
+<p>33 大约：approximately，almost，about，around，nearly，roughly</p>
+<p>34 波动：fluctuate，go ups and downs，display a fluctuation，demonstrate a fluctuation</p>
+<p>35 事实上：practically，in practice，essentially，in essence，in reality，in effect，in fact，as a matter of fact，it is a fact that</p>
+<p>36 换言之：namely，that is to say，in other words，to put it like this，to put it differently，to put it from another way，to put it from another angle</p>
+<hr>
+<h3 id="第二组"><a href="#第二组" class="headerlink" title="第二组"></a>第二组</h3><hr>
+<p>1 individuals, characters, folks 替换(people ,persons)</p>
+<p>2 positive, favorable, rosy ( 美 好 的 ) ， promising( 有 希 望 的 ) ， perfect, pleasurable , excellent, outstanding, superior 替换 good</p>
+<p>3 dreadful, unfavorable, poor, adverse, ill (有害的)替换 bad 如果 bad 做表语，可以有 be less impressive 替 换 eg. an army of college students indulge themselves in playing games, enjoying romance with girls/boys or killing time passively in their dorms. when it approaches to graduation ,as a result, they find their       academic records are less impressive.</p>
+<p>4 (an army of, an ocean of, a sea of, a multitude of ,a host of, many, if not most)替换 many.注：用 many, if not most 一定要小心，many 后一定要有词。eg. many individuals, if not most, harbor the idea that….同理 用 most, if not all, 替换 most.</p>
+<p>5 a slice of, quiet a few , several 替换 some</p>
+<p>6 harbor the idea that, take the attitude that, hold the view that, it is widely shared that ,it is universally acknowledged that) 替 think( 因 为 是 书 面 语 ， 所 以 要 加 that) </p>
+<p>7 affair ,business ,matter 替换 thing</p>
+<p>8 shared 代 common</p>
+<p>9 reap huge fruits 替换 get many benefits )</p>
+<p>10 for my part ,from my own perspective 替换 in my opinion</p>
+<p>11 increasing(ly),growing 替换 more and more( 注意没有 growingly 这种形式。所以当修饰名 词 时 用 increasing/growing. 修 饰 形 容 词 ， 副 词 用 increasingly. eg. sth has gained growing popularity .sth is increasingly popular with the advancement of sth.</p>
+<p>12 little if anything, 或 little or nothing 替换 hardly </p>
+<p>13 beneficial, rewarding 替换 helpful</p>
+<p>14 shopper,client,consumer,purchaser, 替换 customer </p>
+<p>15 exceedingly,extremely, intensely 替换 very</p>
+<p>16 hardly necessary, hardly inevitable … 替换 unnecessary, avoidable</p>
+<p>17 th appeals to sb, sth exerts a tremendous fascination on sb  替 换 sb take interest in / sb. be interested in</p>
+<p>18 capture one’s attention 替换 attract one’s attention. </p>
+<p>19 facet,demension,sphere 代 aspect</p>
+<p>20 be indicative of ,be suggestive of ,be fearful of 代 indicate, suggest ,fear </p>
+<p>21 give rise to, lead to, result in, trigger 替换 cause.</p>
+<p>22 there are several reasons behind sth 替换..reasons for sth </p>
+<p>23 desire 替换 want.</p>
+<p>24 pour attention into 替换 pay attention to </p>
+<p>25 bear in mind that 替换 remember</p>
+<p>26 enjoy, possess 替换 have(注意 process 是过程的意思)</p>
+<p>27 interaction 替换 communication</p>
+<p>28 own on sth 替换 be against , disagree with sth</p>
+<p>29 to name only a few, as an example 替换 for example, for instance</p>
+<p>30 next to / virtually impossible,替换 nearly / almost impossible</p>
+<hr>
+<h3 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h3><hr>
+<p>1 贫穷的：poor = needy = impoverished = poverty-stricken</p>
+<p>2 富裕的：rich = wealthy = affluent = well-to-do = well-off</p>
+<p>3 优秀的：excellent = eminent = top = outstanding</p>
+<p>4 积极的，好的：good = conducive = beneficial=advantageous</p>
+<p>5 消极的，不良的：bad = detrimental= baneful =undesirable</p>
+<p>6 明显的：obvious = apparent = evident =manifest</p>
+<p>7 健康的: healthy = robust = sound = wholesome</p>
+<p>8 惊人的：surprising = amazing = extraordinary = miraculous</p>
+<p>9 美丽的：beautiful = attractive = gorgeous = eye-catching</p>
+<p>10 有活力的：energetic = dynamic = vigorous =animated</p>
+<p>11 流行的： popular = prevailing = prent= pervasive</p>
+<hr>
+<h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><hr>
+<p>1 提高，加强：improve = enhance= promote = strengthen = optimize</p>
+<p>2 引起：cause = trigger = endanger</p>
+<p>3 解决：solve =resolve =address = tackle =cope with = deal with</p>
+<p>4 拆除：destroy = tear down = knock down = eradicate</p>
+<p>5 培养: develop = cultivate = foster = nurture</p>
+<p>6 激发，鼓励：encourage = motivate = stimulate = spur</p>
+<p>7 认为： think = assert= hold = claim = argue</p>
+<p>8 完成：complete = fulfill = accomplish= achieve</p>
+<p>9 保留：keep = preserve = retain = hold</p>
+<p>10 有害于：destroy = impair = undermine = jeopardize</p>
+<p>11 减轻: ease = alleviate = relieve = lighten</p>
+<hr>
+<h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><hr>
+<p>1 影响：influence= impact</p>
+<p>2 危险：dangerous = perils =hazardous</p>
+<p>3 污染：pollution = contamination</p>
+<p>4 人类：human beings= mankind = humane race</p>
+<p>5 老人：old people= the old = the elderly = the aged = senior citizens</p>
+<p>6 幸福：happiness = cheerfulness = well-being</p>
+<p>7 老师：teachers = instructors = educators = lecturers=tutors</p>
+<p>8 教育：education = schooling = family parenting = upbringing</p>
+<p>9 青少年：young people = youngsters = youths = adolescents</p>
+<p>10 优点：advantage = merits = superiority = virtue</p>
+<p>11 责任： responsibility = obligation = duty = liability</p>
+<p>12 能力： ability = capacity = power = skill</p>
+<p>13 职业： job = career = employment = profession</p>
+<p>14 娱乐： enjoyment = pastimes = recreation= entertainment</p>
+<p>15 孩子： children = offspring = descendant= kid</p>
+<hr>
+<h3 id="短语"><a href="#短语" class="headerlink" title="短语"></a>短语</h3><hr>
+<p>1 充满了：be filled with = be awash with = be inundate with = be saturated with</p>
+<p>2 努力：struggle for = aspire after = strive for = spare no efforts for</p>
+<p>3 从事： embark on = take up = set about = go in for</p>
+<p>4 在当代: in contemporary society = in present-day society= in this day and age</p>
+<p>5 大量的: a host of = a multitude of = a vast number of = a vast amount of</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Yu Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mathcy.cn/2016/11/02/2016-11-2-synonyms/" title="同义词替换">http://mathcy.cn/2016/11/02/2016-11-2-synonyms/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/english/" rel="tag"># english</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/25/concepts-in-financial/" rel="next" title="金融中的一些概念">
+                <i class="fa fa-chevron-left"></i> 金融中的一些概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/23/2017-3-23-split-sound/" rel="prev" title="音频分割">
+                音频分割 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yu Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Chenyu91" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:chenyu0714@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/yuchen8378" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一组"><span class="nav-number">1.</span> <span class="nav-text">第一组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二组"><span class="nav-number">2.</span> <span class="nav-text">第二组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#形容词"><span class="nav-number">3.</span> <span class="nav-text">形容词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动词"><span class="nav-number">4.</span> <span class="nav-text">动词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名词"><span class="nav-number">5.</span> <span class="nav-text">名词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#短语"><span class="nav-number">6.</span> <span class="nav-text">短语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yu Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
