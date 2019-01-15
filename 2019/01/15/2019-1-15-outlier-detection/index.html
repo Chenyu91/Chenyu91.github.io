@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Rainstart">
 <meta property="og:description" content="检测异常值的方法有很多，选择哪种方法需要具体问题具体分析，下面罗列一些常用的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-15T13:08:49.960Z">
+<meta property="og:updated_time" content="2019-01-15T13:52:35.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用的异常检测方法">
 <meta name="twitter:description" content="检测异常值的方法有很多，选择哪种方法需要具体问题具体分析，下面罗列一些常用的方法。">
@@ -389,7 +389,7 @@
 <h3 id="统计学方法："><a href="#统计学方法：" class="headerlink" title="统计学方法："></a>统计学方法：</h3><p>1、  一维数据的异常值检测</p>
 <p>假设我们的数据（一维）服从正态分布，我们可以通过极大似然法估计出均值$\mu$ 和标准差$\sigma$，然后根据$3\sigma$准则：有99.7%的数据会落入区域$\mu\pm3\sigma$中。一般情况下，我们认为在区域$\mu\pm3\sigma$外的点为异常值。</p>
 <p>一种更加简便易操作的方法是利用箱线图方法，我们先求出一维数据的第一个四分位数$Q_1$和第三个四分位数$Q_3$，定义$IQR=Q_3-Q_1$，那么对于小于$Q_1-1.5\times IQR$或大于$Q_3+1.5\times IQR$的值认为是异常值。理由和$3\sigma$准则类似，有99.3%的数据会包含在$Q_1-1.5\times IQR$和$Q_3+1.5\times IQR$之间。</p>
-<p>还有一种方法是最大标准残差检验法（Grubb检验），也是假设数据服从正态分布。该方法是先对数据集中每一个元素计算$z-score$：$$z=\frac{|x-\mu|}{\sigma}$$，其中$\bar{x}$为数据集的均值，$\sigma$为数据集的标准差。如果$z\ge\frac{N-1}{\sqrt{n}}\sqrt{\frac{t_{\alpha/(2N),N-2}^2}{N-2+t_{\alpha/(2N),N-2}^2}}$，那么$x$维异常值。公式中$N$是数据集中点的个数，$t_{\alpha/(2N),N-2}$是显著水平$\alpha/(2N)$下的$t-$分布的值。</p>
+<p>还有一种方法是最大标准残差检验法（Grubb检验），也是假设数据服从正态分布。该方法是先对数据集中每一个元素计算$z-score$：$$z=\frac{|x-\mu|}{\sigma}$$，其中$\bar{x}$为数据集的均值，$\sigma$为数据集的标准差。如果$z\ge\frac{N-1}{\sqrt{n}}\sqrt{\frac{t_{\alpha/(2N),N-2}^2}{N-2+t_{\alpha/(2N),N-2}^2}}$，那么$x$为异常值。公式中$N$是数据集中点的个数，$t_{\alpha/(2N),N-2}$是显著水平$\alpha/(2N)$下的$t-$分布的值。</p>
 <p>2、多维数据的异常值检测</p>
 <p>对于多维的数据，一种检测思想是转化成一维数据进行异常值检测。我们依然假设其服从多元正态分布。计算Mahalanobis距离：$MDist(x,\mu)=(x-\mu)^T\Sigma^{-1}(x-\mu)$，其中$\mu$是均值向量，$\Sigma$是协方差矩阵。$MDist(x,\mu)$服从自由度为$d$的$\chi^2$分布，$d$是数据维度。如果$MDist(x,\mu)&gt;\chi_{d,0.975}^2$，则$x$为异常值。</p>
 <h3 id="基于密度的方法"><a href="#基于密度的方法" class="headerlink" title="基于密度的方法"></a>基于密度的方法</h3><p>局部异常因子检测算法是一种基于密度的算法，通过计算局部异常因子来判断异常值，计算公式如下：</p>
